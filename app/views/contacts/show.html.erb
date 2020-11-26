@@ -16,11 +16,11 @@
       </div>
     </div>
   </div>
-  <%# if user.avatar.attached? %>
-    <%#= image_tag user.avatar, width: "15%", height: "15%", class: "rounded ml-3 my-3 mx-3" %>
-  <%# else %>
-    <%#= image_tag "default-avatar-profile-icon-grey.jpg", width: "15%", height: "15%", class: "rounded-circle ml-3 my-3 mx-3" %>
-  <%# end %>
+  <% if @contact.avatar.attached? %>
+    <%= image_tag @contact.avatar, width: "15%", height: "15%", class: "rounded ml-3 my-3 mx-3" %>
+  <% else %>
+    <%= image_tag "default-avatar-profile-icon-grey.jpg", width: "15%", height: "15%", class: "rounded-circle ml-3 my-3 mx-3" %>
+  <% end %>
 </div>
 
 
