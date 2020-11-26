@@ -14,6 +14,7 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1
   def show
+    redirect_to contacts_path unless current_user.id == @contact.user_id
   end
 
   # GET /contacts/new
