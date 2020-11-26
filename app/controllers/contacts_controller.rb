@@ -66,7 +66,7 @@ class ContactsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def contact_params
-      params.require(:contact).permit(:first_name, :middle_name, :last_name, :email, :mobile, :landline, :notes, :user_id)
+      params.require(:contact).permit(:first_name, :middle_name, :last_name, :email, :mobile, :landline, :notes, :avatar)
     end
 
     # Read sort column or default to first_name
