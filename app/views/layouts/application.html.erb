@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TelephoneDirectory</title>
+    <title>Telephone Directory</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,18 +10,20 @@
   </head>
 
   <body>
-    <% if notice %>
-      <div class="alert alert-dark notice" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
+    <div class="container my-4">
+      <% if notice %>
+        <div class="alert alert-dark notice" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
 
-    <% if alert %>
-      <div class="alert alert-dark flash" role="alert">
-        <%= alert %>
-      </div>
-    <% end %>
+      <% if alert %>
+        <div class="alert alert-dark flash" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
