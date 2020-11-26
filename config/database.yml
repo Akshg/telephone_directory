@@ -23,6 +23,9 @@ default: &default
 
 development:
   <<: *default
+  username: postgres
+  password: toor
+  port: 5442
   database: telephone_directory_development
 
   # The specified database role being used to connect to postgres.
