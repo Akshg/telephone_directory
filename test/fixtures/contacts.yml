@@ -8,7 +8,7 @@ one:
   mobile: MyString
   landline: MyString
   notes: MyText
-  user: one
+  user_id: 1
 
 two:
   first_name: MyString
@@ -18,4 +18,4 @@ two:
   mobile: MyString
   landline: MyString
   notes: MyText
-  user: two
+  user_id: 1
