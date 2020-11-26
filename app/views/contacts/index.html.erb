@@ -1,10 +1,9 @@
-<form class="form-inline float-right">
+<%= form_tag contacts_path, method: :get, class: 'form-inline float-right' do %>
   <div class="form-group mx-sm-3 mb-2">
-    <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="text" class="form-control" id="inputPassword2" placeholder="Name or Mobile/Landline">
+    <%= text_field_tag :q, params[:q], placeholder: 'Name or Mobile/Landline', class: "form-control" %>
+    <%= button_tag :Search, class: 'btn btn-primary ml-2' %>
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Search</button>
-</form>
+<% end %>
 
 <table class="table">
   <thead class="thead-light">
@@ -20,7 +19,11 @@
       %>
     </th>
     </th>
-    <th scope="col">Created at</th>
+    <th scope="col">
+      <%=
+        link_to "Created at", contacts_path(sort: 'created_at', direction: (params[:direction] == 'asc' ? 'desc' : 'asc'))
+      %>
+    </th>
     <th scope="col">View count</th>
   </tr>
   </thead>
