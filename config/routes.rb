@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :contacts, only: [:index, :show]
+  resources :contacts
   devise_for :users
   root "application#index"
   get '*path' => redirect('/')

@@ -8,7 +8,7 @@ class CreateContacts < ActiveRecord::Migration[6.0]
       t.string :mobile
       t.string :landline
       t.text :notes
-      t.references :user, null: false, foreign_key: true
+      t.integer :user_id
 
       t.timestamps
     end
