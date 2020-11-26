@@ -1,1 +1,20 @@
-<%= @contacts.inspect %>
+<form class="form-inline float-right">
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <input type="text" class="form-control" id="inputPassword2" placeholder="Name or Mobile/Landline">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Search</button>
+</form>
+
+<table class="table">
+  <thead class="thead-light">
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Created at</th>
+  </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "contact", collection: @contacts %>
+  </tbody>
+</table>
