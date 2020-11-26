@@ -5,7 +5,7 @@ class Contact < ApplicationRecord
 
   validates_presence_of :first_name, :last_name
   validates :email, format: { with: Devise.email_regexp }, if: :email
-  validate :avatar_type_and_size
+  validate :avatar_type_and_size, if: -> { avatar.attached? }
 
   private
   def avatar_type_and_size
