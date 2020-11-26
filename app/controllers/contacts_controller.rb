@@ -15,6 +15,13 @@ class ContactsController < ApplicationController
   # GET /contacts/1
   def show
     redirect_to contacts_path unless current_user.id == @contact.user_id
+    track_view
+    @chartkick_data = @contact
+      .metrics
+      .where(date: [(Date.today-6.days)..Date.today])
+      .select(:date, :views_count)
+      .map {|e| [e.date, e.views_count]}.to_h
+
   end
 
   # GET /contacts/new
@@ -78,5 +85,10 @@ class ContactsController < ApplicationController
     # Read sort direction or default to asc
     def direction
       params[:direction] || 'asc'
+    end
+
+    # To update view count
+    def track_view
+      Metric.update_view_count(contact: @contact)
     end
 end

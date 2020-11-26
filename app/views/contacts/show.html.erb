@@ -4,17 +4,13 @@
     <p><%= mail_to @contact.email %></p>
     <p>Mobile: <%= @contact.mobile.presence || '-' %></p>
     <p>Landline: <%= @contact.landline.presence || '-' %></p>
+    <p>Created at: <%= @contact.created_at.strftime "%F %T" %></p>
+    <p>Updated at: <%= @contact.updated_at.strftime "%F %T" %></p>
     <p>Notes:</p>
     <%= @contact.notes %>
-    <div class="my-5">
-      <div class="btn p-0">
-        <%# if controller_name == 'users' && action_name == 'show' %>
-          <%#= link_to "Edit", edit_user_registration_path, class: "btn btn-primary" %>
-        <%# else%>
-          <%#= link_to "Edit", edit_contact_path(@contact), class: "btn btn-primary" %>
-        <%# end  %>
-      </div>
-    </div>
+    <br />
+    <br />
+
   </div>
   <% if @contact.avatar.attached? %>
     <%= image_tag @contact.avatar, width: "15%", height: "15%", class: "rounded ml-3 my-3 mx-3" %>
@@ -23,7 +19,9 @@
   <% end %>
 </div>
 
+<%= line_chart @chartkick_data %>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Destroy', contact_path(@contact), method: :delete %> |
 <%= link_to 'Back', contacts_path %>
+
